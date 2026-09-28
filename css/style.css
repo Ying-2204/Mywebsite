@@ -1,7 +1,12 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -10,7 +15,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    font-family: "Times New Roman";
+    font-family: "Times New Roman", serif;
     color: #3b2514;
     padding-bottom: 40px;
 }
@@ -20,15 +25,19 @@ body {
     padding: 15px;
     background: #1a0f0a;
     border-bottom: 2px solid #b88648;
+    animation: menuXuatHien 0.7s ease-out;
 }
 
 .menu a {
+    position: relative;
     color: #e5cfab;
     text-decoration: none;
-    padding: 0 20px;
+    padding: 10px 20px;
+    margin: 0 2px;
     font-size: 18px;
     border-right: 1px solid #5a3d28;
     display: inline-block;
+    transition: color 0.25s ease, background 0.25s ease, transform 0.25s ease;
 }
 
 .menu a:last-child {
@@ -37,6 +46,31 @@ body {
 
 .menu a:hover {
     color: #ffffff;
+    background: rgba(184, 134, 72, 0.18);
+    transform: translateY(-2px);
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    bottom: 3px;
+    height: 2px;
+    background: #d4a359;
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+}
+
+.menu a:hover::after,
+.menu a:focus::after {
+    transform: scaleX(1);
+}
+
+.menu a:focus {
+    color: #ffffff;
+    background: rgba(184, 134, 72, 0.25);
+    outline: none;
 }
 
 .thantrang {
@@ -55,6 +89,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    animation: khungXuatHien 0.9s ease-out;
 }
 
 .bia {
@@ -77,17 +112,22 @@ body {
     object-fit: cover;
     margin-bottom: 12px;
     padding: 5px;
-    background: linear-gradient(135deg, #722A25 0%, #d4a359 50%, #421310 100%);
+    background: linear-gradient(
+        135deg,
+        #722A25 0%,
+        #d4a359 50%,
+        #421310 100%
+    );
     box-shadow: 0 4px 15px rgba(66, 19, 16, 0.4);
 }
 
 .khungchinh h1 {
     position: relative;
     z-index: 1;
-    font-family: "Times New Roman";
     color: #4a2810;
     font-size: 45px;
     margin: 5px 0;
+    animation: chuHien 0.8s ease-out 0.2s both;
 }
 
 .nghenghiep {
@@ -96,6 +136,7 @@ body {
     color: #4a2810;
     font-size: 22px;
     margin-top: 5px;
+    animation: chuHien 0.8s ease-out 0.35s both;
 }
 
 .hang3cot {
@@ -119,11 +160,36 @@ body {
     font-size: 16px;
     color: #2c1810;
     min-height: 260px;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.hopnoidung:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.02);
+}
+
+.hang3cot .hopnoidung:nth-child(1) {
+    animation: bayTuTrai 0.8s ease-out 0.25s both;
+}
+
+.hang3cot .hopnoidung:nth-child(2) {
+    animation: bayLen 0.8s ease-out 0.35s both;
+}
+
+.hang3cot .hopnoidung:nth-child(3) {
+    animation: bayTuPhai 0.8s ease-out 0.45s both;
+}
+
+.hang2cot .hopnoidung:nth-child(1) {
+    animation: bayLen 0.8s ease-out 0.55s both;
+}
+
+.hang2cot .hopnoidung:nth-child(2) {
+    animation: bayLen 0.8s ease-out 0.65s both;
 }
 
 .hopnoidung h2 {
     text-align: center;
-    font-family: "Times New Roman";
     font-size: 20px;
     color: #4a2810;
     margin-bottom: 10px;
@@ -148,12 +214,14 @@ li {
     height: 8px;
     border-radius: 5px;
     margin-top: 4px;
+    overflow: hidden;
 }
 
 .thanhchay {
     background: #543118;
     height: 100%;
     border-radius: 5px;
+    transition: width 1s ease;
 }
 
 .danhsachnut {
@@ -170,12 +238,13 @@ li {
     text-decoration: none;
     padding: 8px;
     font-size: 15px;
-    transition: 0.2s;
     border-radius: 4px;
+    transition: background 0.25s ease, transform 0.25s ease;
 }
 
 .danhsachnut a:hover {
     background: #6b4324;
+    transform: translateY(-2px);
 }
 
 .bieumau {
@@ -192,6 +261,15 @@ li {
     font-family: inherit;
     font-size: 14px;
     color: #2c1810;
+    outline: none;
+    transition: 0.25s ease;
+}
+
+.bieumau input:focus,
+.bieumau textarea:focus {
+    border-color: #543118;
+    background: rgba(255, 250, 240, 0.95);
+    box-shadow: 0 0 5px rgba(84, 49, 24, 0.2);
 }
 
 .bieumau textarea {
@@ -208,10 +286,12 @@ li {
     font-size: 14px;
     border-radius: 4px;
     width: 100%;
+    transition: background 0.25s ease, transform 0.25s ease;
 }
 
 .bieumau button:hover {
     background: #6b4324;
+    transform: translateY(-1px);
 }
 
 hr {
@@ -222,9 +302,168 @@ hr {
     width: 90%;
 }
 
+.chantrang {
+    max-width: 1000px;
+    margin: 25px auto 0;
+    padding: 25px 20px 15px;
+    text-align: center;
+    background: #1a0f0a;
+    color: #e5cfab;
+    border-top: 2px solid #b88648;
+    animation: footerXuatHien 0.8s ease-out;
+}
+
+.thongtinchantrang h3 {
+    color: #d4a359;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.thongtinchantrang p {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.lienhechantrang {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 18px 0;
+}
+
+.lienhechantrang a {
+    color: #e5cfab;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.lienhechantrang a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.lienhechantrang i {
+    margin-right: 5px;
+}
+
+.banquyen {
+    padding-top: 12px;
+    border-top: 1px solid #5a3d28;
+    color: #b58c55;
+    font-size: 13px;
+}
+
+@keyframes menuXuatHien {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes khungXuatHien {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bayLen {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bayTuTrai {
+    from {
+        opacity: 0;
+        transform: translateX(-18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bayTuPhai {
+    from {
+        opacity: 0;
+        transform: translateX(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes chuHien {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardClick {
+    0% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes footerXuatHien {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hopnoidung:target {
+    animation: cardClick 0.5s ease;
+}
+
 @media (max-width: 700px) {
+    .menu {
+        padding: 10px;
+    }
+
     .menu a {
-        margin: 0 6px;
+        margin: 0 4px;
+        padding: 8px;
         font-size: 16px;
     }
 
@@ -250,7 +489,30 @@ hr {
         font-size: 27px;
     }
 
+    .nghenghiep {
+        font-size: 18px;
+    }
+
     .hopnoidung {
         padding: 25px 20px;
+    }
+
+    .hang3cot .hopnoidung:nth-child(1),
+    .hang3cot .hopnoidung:nth-child(2),
+    .hang3cot .hopnoidung:nth-child(3),
+    .hang2cot .hopnoidung:nth-child(1),
+    .hang2cot .hopnoidung:nth-child(2) {
+        animation: bayLen 0.7s ease-out 0.2s both;
+    }
+
+    
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
     }
 }
