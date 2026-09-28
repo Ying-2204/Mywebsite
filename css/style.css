@@ -11,7 +11,7 @@ body {
     background-position: center;
     background-attachment: fixed;
 
-    font-family: 'Cormorant Garamond', serif;
+    font-family: "Times New Roman";
     color: #3b2514;
 
     padding-bottom: 40px;
@@ -32,7 +32,7 @@ body {
     text-decoration: none;
 
     margin: 0 15px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .menu a:hover {
@@ -90,8 +90,8 @@ body {
     position: relative;
     z-index: 1;
 
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
 
     border-radius: 50%;
 
@@ -109,24 +109,24 @@ body {
     position: relative;
     z-index: 1;
 
-    font-family: 'Playfair Display', serif;
+    font-family: "Times New Roman";
 
     color: #4a2810;
 
-    font-size: 34px;
+    font-size: 45px;
 
     margin: 5px 0;
 }
 
 
 
-.nghe-nghiep {
+.nghenghiep {
     position: relative;
     z-index: 1;
 
     color: #4a2810;
 
-    font-size: 18px;
+    font-size: 22px;
 
     margin-top: 5px;
 }
@@ -171,7 +171,7 @@ body {
 
 
 .hopnoidung h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: "Times New Roman";
 
     font-size: 20px;
 
@@ -296,9 +296,7 @@ li {
 }
 
 
-/* =========================
-   ĐIỆN THOẠI
-========================= */
+
 
 @media (max-width: 700px) {
 
