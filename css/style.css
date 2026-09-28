@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: url("background.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    font-family: 'Cormorant Garamond', serif;
+    color: #3b2514;
+
+    padding-bottom: 40px;
+}
+
+
+
+.menu {
+    text-align: center;
+    padding: 15px;
+
+    background: #1a0f0a;
+    border-bottom: 2px solid #b88648;
+}
+
+.menu a {
+    color: #e5cfab;
+    text-decoration: none;
+
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+.menu a:hover {
+    color: #ffffff;
+}
+
+
+
+.thantrang {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+
+
+.khungchinh {
+    position: relative;
+
+    text-align: center;
+
+    padding: 70px 30px;
+    margin-bottom: 25px;
+
+    min-height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.bia {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: fill;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+
+.avatar {
+    position: relative;
+    z-index: 1;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    border: 3px solid #b88648;
+
+    object-fit: cover;
+
+    margin-bottom: 12px;
+}
+
+
+
+
+.khungchinh h1 {
+    position: relative;
+    z-index: 1;
+
+    font-family: 'Playfair Display', serif;
+
+    color: #4a2810;
+
+    font-size: 34px;
+
+    margin: 5px 0;
+}
+
+
+
+.nghe-nghiep {
+    position: relative;
+    z-index: 1;
+
+    color: #4a2810;
+
+    font-size: 18px;
+
+    margin-top: 5px;
+}
+
+
+.hang3cot {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+}
+
+
+
+
+.hang2cot {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+
+.hopnoidung {
+    background: #f4ead5;
+
+    border: 1.5px solid #b58c55;
+
+    padding: 15px 20px;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+
+.hopnoidung h2 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 20px;
+
+    color: #4a2810;
+
+    border-bottom: 1px solid #b58c55;
+
+    padding-bottom: 5px;
+
+    margin-bottom: 12px;
+}
+
+
+
+ul {
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+li {
+    margin-bottom: 4px;
+}
+
+
+
+.dongkynang {
+    margin-bottom: 10px;
+
+    font-weight: bold;
+}
+
+.thanhxam {
+    background: #d4be9c;
+
+    height: 8px;
+
+    border-radius: 5px;
+
+    margin-top: 4px;
+}
+
+.thanhchay {
+    background: #543118;
+
+    height: 100%;
+
+    border-radius: 5px;
+}
+
+
+
+
+.danhsachnut {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+.danhsachnut a {
+    text-align: center;
+
+    background: #4a2810;
+
+    color: #f7e6c4;
+
+    text-decoration: none;
+
+    padding: 8px;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+.danhsachnut a:hover {
+    background: #6b4324;
+}
+
+
+
+.bieumau input,
+.bieumau textarea {
+    width: 100%;
+
+    padding: 8px 10px;
+
+    margin-bottom: 8px;
+
+    border: 1px solid #b58c55;
+
+    background: #fffaf0;
+
+    font-family: inherit;
+
+    font-size: 15px;
+}
+
+.bieumau textarea {
+    resize: vertical;
+}
+
+.bieumau button {
+    background: #4a2810;
+
+    color: #fff;
+
+    border: none;
+
+    padding: 8px 16px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 15px;
+}
+
+.bieumau button:hover {
+    background: #6b4324;
+}
+
+
+/* =========================
+   ĐIỆN THOẠI
+========================= */
+
+@media (max-width: 700px) {
+
+    .menu a {
+        margin: 0 6px;
+        font-size: 16px;
+    }
+
+    .hang3cot {
+        grid-template-columns: 1fr;
+    }
+
+    .hang2cot {
+        grid-template-columns: 1fr;
+    }
+
+    .khungchinh {
+        padding: 50px 20px;
+        min-height: 350px;
+    }
+
+    .avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .khungchinh h1 {
+        font-size: 27px;
+    }
+}
