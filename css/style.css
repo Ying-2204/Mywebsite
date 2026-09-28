@@ -10,19 +10,14 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-
     font-family: "Times New Roman";
     color: #3b2514;
-
     padding-bottom: 40px;
 }
-
-
 
 .menu {
     text-align: center;
     padding: 15px;
-
     background: #1a0f0a;
     border-bottom: 2px solid #b88648;
 }
@@ -30,16 +25,19 @@ body {
 .menu a {
     color: #e5cfab;
     text-decoration: none;
+    padding: 0 20px;
+    font-size: 18px;
+    border-right: 1px solid #5a3d28;
+    display: inline-block;
+}
 
-    margin: 0 15px;
-    font-size: 20px;
+.menu a:last-child {
+    border-right: none;
 }
 
 .menu a:hover {
     color: #ffffff;
 }
-
-
 
 .thantrang {
     max-width: 1000px;
@@ -47,144 +45,89 @@ body {
     padding: 0 15px;
 }
 
-
-
 .khungchinh {
     position: relative;
-
     text-align: center;
-
     padding: 70px 30px;
     margin-bottom: 25px;
-
     min-height: 400px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-
-
-
 .bia {
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
-
     object-fit: fill;
-
     z-index: 0;
-
     pointer-events: none;
 }
-
-
 
 .avatar {
     position: relative;
     z-index: 1;
-
     width: 250px;
     height: 250px;
-
     border-radius: 50%;
-
-    border: 3px solid #b88648;
-
     object-fit: cover;
-
     margin-bottom: 12px;
+    padding: 5px;
+    background: linear-gradient(135deg, #722A25 0%, #d4a359 50%, #421310 100%);
+    box-shadow: 0 4px 15px rgba(66, 19, 16, 0.4);
 }
-
-
-
 
 .khungchinh h1 {
     position: relative;
     z-index: 1;
-
     font-family: "Times New Roman";
-
     color: #4a2810;
-
     font-size: 45px;
-
     margin: 5px 0;
 }
-
-
 
 .nghenghiep {
     position: relative;
     z-index: 1;
-
     color: #4a2810;
-
     font-size: 22px;
-
     margin-top: 5px;
 }
 
-
 .hang3cot {
     display: grid;
-
     grid-template-columns: 1fr 1fr 1fr;
-
     gap: 15px;
-
     margin-bottom: 15px;
 }
 
-
-
-
 .hang2cot {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 15px;
 }
 
-
-
 .hopnoidung {
-    background: #f4ead5;
-
-    border: 1.5px solid #b58c55;
-
-    padding: 15px 20px;
-
-    font-size: 17px;
-
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    background: url("../AnhcuaThuy/khungnho.png") no-repeat center center;
+    background-size: 100% 100%;
+    padding: 30px 25px;
+    font-size: 16px;
+    color: #2c1810;
+    min-height: 260px;
 }
-
-
 
 .hopnoidung h2 {
+    text-align: center;
     font-family: "Times New Roman";
-
     font-size: 20px;
-
     color: #4a2810;
-
-    border-bottom: 1px solid #b58c55;
-
-    padding-bottom: 5px;
-
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
-
-
 
 ul {
     margin-left: 20px;
@@ -195,80 +138,60 @@ li {
     margin-bottom: 4px;
 }
 
-
-
 .dongkynang {
     margin-bottom: 10px;
-
     font-weight: bold;
 }
 
 .thanhxam {
     background: #d4be9c;
-
     height: 8px;
-
     border-radius: 5px;
-
     margin-top: 4px;
 }
 
 .thanhchay {
     background: #543118;
-
     height: 100%;
-
     border-radius: 5px;
 }
 
-
-
-
 .danhsachnut {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 10px;
+    margin-top: 10px;
 }
 
 .danhsachnut a {
     text-align: center;
-
     background: #4a2810;
-
     color: #f7e6c4;
-
     text-decoration: none;
-
     padding: 8px;
-
     font-size: 15px;
-
     transition: 0.2s;
+    border-radius: 4px;
 }
 
 .danhsachnut a:hover {
     background: #6b4324;
 }
 
-
+.bieumau {
+    margin-top: 5px;
+}
 
 .bieumau input,
 .bieumau textarea {
     width: 100%;
-
-    padding: 8px 10px;
-
+    padding: 6px 10px;
     margin-bottom: 8px;
-
     border: 1px solid #b58c55;
-
-    background: #fffaf0;
-
+    background: rgba(255, 250, 240, 0.7);
     font-family: inherit;
-
-    font-size: 15px;
+    font-size: 14px;
+    color: #2c1810;
 }
 
 .bieumau textarea {
@@ -277,29 +200,29 @@ li {
 
 .bieumau button {
     background: #4a2810;
-
     color: #fff;
-
     border: none;
-
-    padding: 8px 16px;
-
+    padding: 7px 15px;
     cursor: pointer;
-
     font-family: inherit;
-
-    font-size: 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    width: 100%;
 }
 
 .bieumau button:hover {
     background: #6b4324;
 }
 
-
-
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #b88648, transparent);
+    margin: 30px auto;
+    width: 90%;
+}
 
 @media (max-width: 700px) {
-
     .menu a {
         margin: 0 6px;
         font-size: 16px;
@@ -325,5 +248,9 @@ li {
 
     .khungchinh h1 {
         font-size: 27px;
+    }
+
+    .hopnoidung {
+        padding: 25px 20px;
     }
 }
