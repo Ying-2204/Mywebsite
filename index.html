@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -146,29 +145,31 @@
                 <h2>LIÊN HỆ VỚI MÌNH</h2>
                 <hr>
 
-                <form class="bieumau">
+                <form class="bieumau" id="formLienHe">
 
                     <input
                         type="text"
+                        id="hoTen"
                         placeholder="Họ và tên"
-                        required
                     >
 
                     <input
                         type="email"
+                        id="email"
                         placeholder="Email"
-                        required
                     >
 
                     <textarea
+                        id="loiNhan"
                         rows="2"
                         placeholder="Lời nhắn"
-                        required
                     ></textarea>
 
-                    <button type="button">
+                    <button type="submit">
                         Gửi tin nhắn
                     </button>
+
+                    <p id="thongBao"></p>
 
                 </form>
             </div>
@@ -179,11 +180,44 @@
 
     <footer class="chantrang">
 
-
+        <div class="banquyen">
             © 2026 Nguyễn Thị Hồng Thúy - Personal Profile
-
+        </div>
 
     </footer>
 
+    ```html
+<script>
+    const form = document.getElementById("formLienHe");
+    const thongBao = document.getElementById("thongBao");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const hoTen = document.getElementById("hoTen").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const loiNhan = document.getElementById("loiNhan").value.trim();
+
+        if (hoTen === "" || email === "" || loiNhan === "") {
+            thongBao.textContent = "⚠ Vui lòng điền đầy đủ thông tin!";
+            thongBao.style.color = "#9b2c2c";
+            thongBao.style.marginTop = "10px";
+            thongBao.style.textAlign = "center";
+            return;
+        }
+
+        form.querySelectorAll("input, textarea, button").forEach(function(element) {
+            element.style.display = "none";
+        });
+
+        thongBao.textContent = "✓ Cảm ơn bạn đã gửi phản hồi!";
+        thongBao.style.color = "#3d6b35";
+        thongBao.style.marginTop = "20px";
+        thongBao.style.textAlign = "center";
+        thongBao.style.fontWeight = "bold";
+    });
+</script>
+
 </body>
 </html>
+
